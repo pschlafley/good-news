@@ -1,11 +1,12 @@
 {
-  "name": "good-news",
-  "version": "1.0.0",
-  "description": "In a world filled with bad news, lets look at all of the good things that happen around us!",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+	"name": "good-news",
+	"version": "1.0.0",
+	"description": "In a world filled with bad news, lets look at all of the good things that happen around us!",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {}
 }
