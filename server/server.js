@@ -1,13 +1,15 @@
-// const express = require('express');
-// const { ApolloServer, gql } = require('apollo-server-express');
+const express = require('express');
+const db = require('./config/connection');
 
-// const server = new ApolloServer({ typeDefs, resolvers });
-// await server.start();
+const PORT = process.env.PORT || 3001;
 
-// const app = express();
-// server.applyMiddleware({ app });
+const app = express();
 
-// await new Promise(resolve => app.listen({ port: 4000 }, resolve));
-// console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
-// return { server, app };
-console.log(process.env.MONGODBURI)
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+db.once('open', () => {
+    app.listen(PORT, () => {
+        console.log(`API server running on port ${PORT}`);
+    });
+});
