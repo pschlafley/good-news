@@ -4,9 +4,20 @@
 	"description": "In a world filled with bad news, lets look at all of the good things that happen around us!",
 	"main": "server.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+		"start:prod": "cd server && npm start",
+		"start:dev": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
+		"install": "cd server && npm i && cd ../client && npm i",
+		"seed": "cd server && npm run seed",
+		"heroku-postbuild": "cd client && npm run build"
 	},
 	"author": "",
 	"license": "ISC",
-	"dependencies": {}
+	"dependencies": {
+		"if-env": "^1.0.4"
+	},
+	"devDependencies": {
+		"concurrently": "^6.2.0"
+	}
 }

@@ -16,7 +16,8 @@ const articleSchema = new Schema({
         type: String,
         minLength: 25,
         required: true
-    }
+    },
+
 });
 
 const Article = model('Article', articleSchema);
